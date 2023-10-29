@@ -1,0 +1,8 @@
+C:\Users\dell\source\repos\GravityBookStoreTabular\bin\Model.asdatabase
+C:\Users\dell\source\repos\GravityBookStoreTabular\bin\Model.deploymenttargets
+C:\Users\dell\source\repos\GravityBookStoreTabular\bin\Model.deploymentoptions
+C:\Users\dell\source\repos\GravityBookStoreTabular\obj\Development\GravityBookStoreTabular.smproj.AssemblyReference.cache
+C:\Users\dell\source\repos\GravityBookStoreTabular\obj\Development\GravityBookStoreTabular.smproj.CoreCompileInputs.cache
+C:\Users\dell\source\repos\GravityBookStoreTabular\obj\Development\Model.asdatabase
+C:\Users\dell\source\repos\GravityBookStoreTabular\obj\Development\Model.deploymentoptions
+C:\Users\dell\source\repos\GravityBookStoreTabular\obj\Development\Model.deploymenttargets

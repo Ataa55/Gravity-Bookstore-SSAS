@@ -1,0 +1,367 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer localhost GravityBookStoreDWH",
+        "connectionString": "Provider=SQLOLEDB;Data Source=.;Initial Catalog=GravityBookStoreDWH;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "dell",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim_Book",
+        "columns": [
+          {
+            "name": "book_id_sk",
+            "dataType": "int64",
+            "sourceColumn": "book_id_sk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "book_id_bk",
+            "dataType": "int64",
+            "sourceColumn": "book_id_bk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "title",
+            "dataType": "string",
+            "sourceColumn": "title",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "num_pages",
+            "dataType": "int64",
+            "sourceColumn": "num_pages",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "publication_date",
+            "dataType": "dateTime",
+            "sourceColumn": "publication_date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "publisher_name",
+            "dataType": "string",
+            "sourceColumn": "publisher_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "author_name",
+            "dataType": "string",
+            "sourceColumn": "author_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "language_code",
+            "dataType": "string",
+            "sourceColumn": "language_code",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "language_name",
+            "dataType": "string",
+            "sourceColumn": "language_name",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Book",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Book].*   FROM [dbo].[Dim_Book] ",
+              "dataSource": "SqlServer localhost GravityBookStoreDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Book].*   FROM [dbo].[Dim_Book] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Book"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_customer",
+        "columns": [
+          {
+            "name": "customer_sk",
+            "dataType": "int64",
+            "sourceColumn": "customer_sk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "customer_bk",
+            "dataType": "int64",
+            "sourceColumn": "customer_bk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "first_name",
+            "dataType": "string",
+            "sourceColumn": "first_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "last_name",
+            "dataType": "string",
+            "sourceColumn": "last_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "country_name",
+            "dataType": "string",
+            "sourceColumn": "country_name",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "street_number",
+            "dataType": "string",
+            "sourceColumn": "street_number",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "street_name",
+            "dataType": "string",
+            "sourceColumn": "street_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "email",
+            "dataType": "string",
+            "sourceColumn": "email",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_customer",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_customer].*   FROM [dbo].[Dim_customer] ",
+              "dataSource": "SqlServer localhost GravityBookStoreDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_customer].*   FROM [dbo].[Dim_customer] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_customer"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Date",
+        "columns": [
+          {
+            "name": "Date_SK",
+            "dataType": "int64",
+            "sourceColumn": "Date_SK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Day",
+            "dataType": "string",
+            "sourceColumn": "Day",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "sourceColumn": "Quarter",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Date",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Date].*   FROM [dbo].[Dim_Date] ",
+              "dataSource": "SqlServer localhost GravityBookStoreDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Date].*   FROM [dbo].[Dim_Date] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Date"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "fact_order",
+        "columns": [
+          {
+            "name": "book_id_sk",
+            "dataType": "int64",
+            "sourceColumn": "book_id_sk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "customer_sk",
+            "dataType": "int64",
+            "sourceColumn": "customer_sk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Date_SK",
+            "dataType": "int64",
+            "sourceColumn": "Date_SK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "total_price",
+            "dataType": "int64",
+            "sourceColumn": "total_price",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "total_shipping",
+            "dataType": "int64",
+            "sourceColumn": "total_shipping",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_order",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[fact_order].*   FROM [dbo].[fact_order] ",
+              "dataSource": "SqlServer localhost GravityBookStoreDWH"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Quantity",
+            "expression": "COUNT(fact_order[customer_sk])"
+          },
+          {
+            "name": "Total Price",
+            "expression": " sum(fact_order[total_price])"
+          },
+          {
+            "name": "total_shippingCost",
+            "expression": " sum(fact_order[total_shipping])"
+          },
+          {
+            "name": "Total Book Quantity",
+            "expression": " COUNT(fact_order[book_id_sk])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[fact_order].*   FROM [dbo].[fact_order] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "fact_order"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "df9eccba-0834-4cc5-babe-aebf9ac9a5f1",
+        "fromTable": "fact_order",
+        "fromColumn": "book_id_sk",
+        "toTable": "Dim_Book",
+        "toColumn": "book_id_sk"
+      },
+      {
+        "name": "24163a50-7bf8-4bd1-81f6-8e38bc87941f",
+        "fromTable": "fact_order",
+        "fromColumn": "customer_sk",
+        "toTable": "Dim_customer",
+        "toColumn": "customer_sk"
+      },
+      {
+        "name": "b3664714-531c-4063-bab1-434af54de9fd",
+        "fromTable": "fact_order",
+        "fromColumn": "Date_SK",
+        "toTable": "Dim_Date",
+        "toColumn": "Date_SK"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
